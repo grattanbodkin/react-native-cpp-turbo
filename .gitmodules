@@ -1,0 +1,3 @@
+[submodule "cpp/elementary"]
+	path = cpp/elementary
+	url = https://github.com/elemaudio/elementary

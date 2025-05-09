@@ -1,5 +1,8 @@
 #include "NativeCppTurboModule.h"
+#include "audioengine.h"
 
+
+static std::shared_ptr<elementary::AudioEngine> audioEngine = std::make_shared<elementary::AudioEngine>();
 
 namespace facebook::react {
 NativeCppTurboModule::NativeCppTurboModule(std::shared_ptr<CallInvoker> jsinvoker)
@@ -7,7 +10,9 @@ NativeCppTurboModule::NativeCppTurboModule(std::shared_ptr<CallInvoker> jsinvoke
 
 std::string NativeCppTurboModule::reverseString(jsi::Runtime &rt, std::string str) {
     std::reverse(str.begin(), str.end());
-
+    audioEngine->getRuntime().applyInstructions(elem::js::Array{
+        elem::js::Value("reverseString"),
+    });
     return str;
 }
 

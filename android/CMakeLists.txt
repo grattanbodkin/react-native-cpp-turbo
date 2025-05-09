@@ -13,7 +13,11 @@ add_library(react-native-cpp-turbo            STATIC
 )
 
 target_include_directories(
-  react-native-cpp-turbo PUBLIC ../cpp
+  react-native-cpp-turbo PUBLIC 
+  ../cpp
+  ../cpp/vendor
+  ../cpp/elementary/runtime
+  ../cpp/elementary/cli/choc
 )
 
 target_link_libraries(react-native-cpp-turbo

@@ -169,7 +169,10 @@
       [
         "typescript",
         {
-          "project": "tsconfig.build.json"
+          "project": "tsconfig.build.json",
+          "exclude": [
+            "cpp/elementary/js"
+          ]
         }
       ]
     ]
